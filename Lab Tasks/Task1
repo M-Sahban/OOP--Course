@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+struct parameters
+{
+  double length , width;	
+};
+int main()
+{
+	parameters rect1 , rect2;
+	cout<<"Enter the length of the first rectangle:\n";
+	cin>> rect1.length;
+	cout<<"Enter the width of the first rectangle:\n";
+	cin>> rect1.width;
+	//////////////////////////////////////////////////
+	cout<<"Enter the length of the second rectangle:\n";
+	cin>> rect2.length;
+	cout<<"Enter the width of the second rectangle:\n";
+	cin>> rect2.width;
+	
+	double area_rect1, area_rect2;
+	
+	area_rect1 = rect1.length*rect1.width;
+	cout<<"\n The area of rectangle 1 is : "<<area_rect1<<endl;
+	area_rect2 = rect2.length*rect2.width;
+	cout<<"\n The area of rectangle 2 is : "<<area_rect2<<endl;
+	
+	if(area_rect1 == area_rect2)
+	{
+		cout<<"The two rectangles are of the same area\n";
+	}
+	if(area_rect1 > area_rect2)
+	{
+		cout<<"Rectangle 1 has larger area than rectangle 2\n";
+	}
+	if(area_rect1 < area_rect2)
+	{
+		cout<<"Rectangle 1 has smaller area than Rectangle 2\n";
+	}
+	return 0;
+}
