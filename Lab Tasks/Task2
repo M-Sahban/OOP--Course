@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct movieData
+{
+    string title;
+    string director;
+    int release_year;
+			
+};
+
+	void createMovieData( movieData& movie);
+	void displayMovieData( movieData& movie);
+int main()
+{    movieData movie1 , movie2;
+	 
+	createMovieData(movie1);
+		createMovieData(movie2);
+	displayMovieData(movie1);
+	 	displayMovieData(movie2);
+	return 0;
+}
+     	void createMovieData( movieData& movie)
+	{
+
+    cout<<"Enter the title of the movie:\n";
+          cin>>movie.title;
+          cout<<"Enter the director's name:\n";
+          cin>>movie.director;
+          cout<<"Enter the release year of the movie:\n";
+          cin>>movie.release_year;
+			
+		}
+		
+
+void displayMovieData( movieData& movie)
+{
+				cout<<"The titile:"<<movie.title <<endl;
+			cout<<"The director:"<<movie.director<<endl;
+			cout<<"The release year:"<<movie.release_year<<endl;
+	
+}
