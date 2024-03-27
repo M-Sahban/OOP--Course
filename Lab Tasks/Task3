@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Population{
+	private:
+		int birthNumber;
+		int deathNumber;
+		int population;
+		public:
+			int getBirthNumber(){
+				return birthNumber;
+			}
+			int getDeathNumber(){
+				return deathNumber;
+			}
+		int getPopulation(){
+				return population;
+			}
+			////////////////////////////////
+			int setBirthNumber(int b){
+				birthNumber = b;
+			}
+			int setDeathNumber(int d){
+				deathNumber = d;
+			}
+			int setPopulation(int p){
+				population = p;
+			}
+			//////////////////////
+			float birthRate( ){
+				float birthRate = (float)birthNumber / population;
+			}
+			float deathRate(){
+				float deathRate = (float)deathNumber / population; 
+			}
+};
+int main(){
+	int birth,death, pop;
+	cout<<"Enter birth number:";
+	cin>>birth;
+cout<<"Enter death number:";
+	cin>>death;
+cout<<"Enter population:";
+	cin>>pop;
+	
+	Population popp;
+	popp.setBirthNumber(birth);
+	popp.setDeathNumber(death);
+	popp.setPopulation(pop);
+	
+	float birthrate = popp.birthRate();
+	float deathrate = popp.deathRate();
+	
+	cout<<"The birth rate:"<<birthrate<<endl;
+	cout<<"The death rate:"<<deathrate<<endl;
+	return 0;
+}
