@@ -1,0 +1,59 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+// Base class Animal
+class Animal{
+	public:
+		// Public data members to store name and age of animal.
+		string name;
+		int age;
+		Animal(string n, int a) : name(n), age(a){ 
+		//parameterized Constructor to initialize the data members through member initializer list
+		}
+		// member function  of the base class
+		void speak(){
+		};
+};
+// privately inherited derived class Bird from base class animal
+class Bird : private Animal{
+	private:
+		int WingLength;
+		public:
+			Bird(int w, string n, int a) : Animal(n,a), WingLength(w) {
+				// Initializing base class members and derived class members through constructor initialization list.
+			}
+			// Function to display Bird details
+			void speak(){
+				cout<<"I am "<<name;
+				cout<<" I can sing, "<<"I am "<<age<<" years old ";
+				cout<<"My wings are "<<WingLength<<" meters long\n";
+			}
+};
+
+// privately inherited derived class Reptile from base class animal
+class Reptile : private Animal{
+	private:
+	string Habitat;
+		public:
+			Reptile(string h, string n, int a) : Animal(n,a), Habitat(h) {
+				// Initializing base class members and derived class members through constructor initialization list.
+			}
+			// Function to dispaly Reptile details
+			void speak(){
+				cout<<"I am "<<name;
+				cout<<" I can creap, "<<"I am "<<age<<" years old ";
+				cout<<" My Habitat is "<<Habitat<<"\n";
+			}
+};
+
+int main(){
+	// Creating object of derived class bird
+	Bird p(2, "Parrot", 12);
+	p.speak(); // calling speak function to display bird details
+	
+	// Creating object of derived class bird
+	Reptile R("land and water", "Croc",22);
+	R.speak();  // calling speak function to display Reptile details
+	return 0;
+}
