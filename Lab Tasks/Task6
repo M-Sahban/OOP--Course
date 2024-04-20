@@ -1,0 +1,60 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+// base class boat
+class boat{
+	public:
+		int boatLength;
+		boat(int bl): boatLength(bl) { // initializing the data member through parameterized constructor
+		}
+		// Member function 
+		void swim(){
+			cout<<"I am swimming\n";
+		}
+		
+};// end of class
+
+// base class plane
+class plane{
+	public:
+		int maxAltitude;
+	
+		
+		plane(int mA) : maxAltitude(mA){ // initializing the data member through parameterized constructor
+		}
+		// Member function
+		void fly(){
+			cout<<"I can fly\n";
+		}
+};//end of class
+
+// Derived class skimmer from two base classes boat and plane (Protectedly).
+class skimmer : protected boat, protected plane{
+	private:
+		// declaring private data members
+		string name;
+		int numPassangers;
+		public:
+			// Parameterized constructor for the skimmer class
+			skimmer(string n, int num, int l ,int A) : boat(l), plane(A), name(n), numPassangers(num){
+				// Initializing base class members and derived class members through constructor initialization list.
+			}
+			// function to display Skimmer details.
+			void display(){
+				cout<<"skimmer Name: "<<name;
+				cout<<", Boat Length: "<<boatLength<<" ft";
+				cout<<", Max Altitude: "<<maxAltitude<<" ft";
+				cout<<", Number of Passangers: "<<numPassangers<<endl;
+				swim(); // calling the member function of base class boat
+				fly();  // calling the member function of base class plane
+				
+			}
+};// end of class
+
+int main(){
+	//Creating Object of skimmer class
+	skimmer s1("Ali",40, 20, 30000);
+	s1.display(); // Calling display function to print skimmer details/
+	return 0;
+}
